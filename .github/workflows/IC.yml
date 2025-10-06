@@ -1,0 +1,18 @@
+name: IC
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+      with:
+        repository: nuffem/0
+        ref: 846ac253945041d5d797509d2a8c7c91e0a9fb52
+        path: "./0"
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - run: node 0/0_node.js testes/0
