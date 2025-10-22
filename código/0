@@ -1,13 +1,13 @@
 {
   nodejs: comandos => comandos * ";"
-  escreva: saída => {
+  escreva: saída => [
     "console.log('"
     saída
     "')"
-  } * ""
-  saia: código => {
+  ] * ""
+  saia: código => [
     "process.exit("
     "" + código
     ")"
-  } * ""
+  ] * ""
 }

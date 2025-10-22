@@ -1,12 +1,12 @@
 uniteste # https://cdn.jsdelivr.net/gh/nuffem/0@846ac253945041d5d797509d2a8c7c91e0a9fb52/uniteste.0
 processo # ../código/0
 
-uniteste.descrever({"processo" {
-  uniteste.iguais({
-    processo.nodejs({
+uniteste.descrever(["processo" [
+  uniteste.iguais([
+    processo.nodejs([
       processo.escreva("teste")
       processo.saia(0)
-    })
+    ])
     "console.log('teste');process.exit(0)"
-  })
-}})(0)
+  ])
+]])
