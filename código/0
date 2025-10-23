@@ -1,5 +1,12 @@
 lista # https://cdn.jsdelivr.net/gh/angelonuffer/lista@2efb5d2699ae928fc7d2b29be6783ae06670415a/código/0
 
+comando = nome => {
+  [nome]: opções => {
+    tipo: nome
+    ...opções
+  }
+}
+
 {
   nodejs: { comandos } => lista.mapear({
     lista: comandos
@@ -16,12 +23,6 @@ lista # https://cdn.jsdelivr.net/gh/angelonuffer/lista@2efb5d2699ae928fc7d2b29be
       ] * ""
       | "throw new Error('Comando desconhecido.')"
   }) * ";"
-  escreva: opções => {
-    tipo: "escreva"
-    ...opções
-  }
-  saia: opções => {
-    tipo: "saia"
-    ...opções
-  }
+  ...comando("escreva")
+  ...comando("saia")
 }
