@@ -3,10 +3,16 @@ processo # ../código/0
 
 uniteste.descrever(["processo" [
   uniteste.iguais([
-    processo.nodejs([
-      processo.escreva("teste")
-      processo.saia(0)
-    ])
+    processo.nodejs({
+      comandos: [
+        processo.escreva({
+          texto: "teste"
+        })
+        processo.saia({
+          código: 0
+        })
+      ]
+    })
     "console.log('teste');process.exit(0)"
   ])
 ]])
