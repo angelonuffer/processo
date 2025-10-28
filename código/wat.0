@@ -1,0 +1,28 @@
+lista = https://cdn.jsdelivr.net/gh/angelonuffer/lista@2efb5d2699ae928fc7d2b29be6783ae06670415a/código/0
+
+{ comandos } => [
+  "(module"
+  "  (import \"wasi_snapshot_preview1\" \"fd_write\" (func $fd_write (param i32 i32 i32 i32) (result i32)))"
+  "  (import \"wasi_snapshot_preview1\" \"proc_exit\" (func $proc_exit (param i32)))"
+  "  (memory 1)"
+  "  (export \"memory\" (memory 0))"
+  "  (export \"_start\" (func $_start))"
+  "  (func $_start"
+  lista.mapear({
+    lista: comandos
+    função: comando =>
+      | comando.tipo == "escreva" = [
+        "    ;; escreva \""
+        comando.argumento
+        "\""
+      ] * ""
+      | comando.tipo == "saia" = [
+        "    (call $proc_exit (i32.const "
+        "" + comando.argumento
+        "))"
+      ] * ""
+      | ""
+  }) * "\n"
+  "  )"
+  ")"
+] * "\n"
