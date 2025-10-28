@@ -10,12 +10,15 @@ Uma biblioteca simples para executar comandos do Node.js.
 
 ## Funções
 
-A biblioteca fornece três funções principais:
+A biblioteca fornece funções principais para diferentes formatos de saída:
 
-- `nodejs`: Concatena comandos com ponto e vírgula
+- `nodejs`: Gera código JavaScript para Node.js
 - `wat`: Gera código WebAssembly Text format (WAT) com WASI
-- `escreva`: Gera código para console.log
-- `saia`: Gera código para process.exit
+
+E funções auxiliares para criar comandos:
+
+- `escreva`: Cria comando para escrever texto
+- `saia`: Cria comando para sair com código de status
 
 ## Formatos de Saída
 
