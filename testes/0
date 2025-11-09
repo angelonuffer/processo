@@ -1,17 +1,19 @@
-uniteste = https://cdn.jsdelivr.net/gh/angelonuffer/uniteste@e24cfba7808bd35cbcd0501a9fc5a71fd23e5d54/código/0
+uniteste = https://cdn.jsdelivr.net/gh/angelonuffer/uniteste@fb712d21906d3efc44abfcaeccdba8e40fcee538/código/0
 processo = ../código/0
 
-uniteste.descrever({
-  nome: "processo"
-  testes: [
-    uniteste.iguais([
-      processo.nodejs({
-        comandos: [
-          processo.escreva("teste")
-          processo.saia(0)
-        ]
-      })
-      "console.log('teste');process.exit(0)"
-    ])
-  ]
-})
+uniteste.exibir(
+  uniteste.descrever({
+    nome: "processo"
+    testes: [
+      uniteste.iguais([
+        processo.nodejs({
+          comandos: [
+            processo.escreva("teste")
+            processo.saia(0)
+          ]
+        })
+        "console.log('teste');process.exit(0)"
+      ])
+    ]
+  })
+)
