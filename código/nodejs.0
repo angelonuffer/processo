@@ -11,12 +11,12 @@ gerar = comando =>
   ] * ""
   | "throw new Error('Comando desconhecido.')"
 
-nodejs = { comandos } =>
+nodejs = comandos =>
   | comandos[.] == 0 = ""
   | comandos[.] == 1 = gerar(comandos[0])
   | [
-    nodejs({ comandos: [comandos[0]] })
-    nodejs({ comandos: comandos[1:] })
+    nodejs([comandos[0]])
+    nodejs(comandos[1:])
   ] * ";"
 
 nodejs

@@ -1,4 +1,4 @@
-uniteste = https://cdn.jsdelivr.net/gh/angelonuffer/uniteste@fb712d21906d3efc44abfcaeccdba8e40fcee538/código/0
+uniteste = https://cdn.jsdelivr.net/gh/angelonuffer/uniteste@6dc9fae7206978d3a62b3a420a2acbdf83ba9bc5/código/0
 processo = ../código/0
 
 uniteste.exibir(
@@ -6,12 +6,10 @@ uniteste.exibir(
     nome: "processo"
     testes: [
       uniteste.iguais([
-        processo.nodejs({
-          comandos: [
-            processo.escreva("teste")
-            processo.saia(0)
-          ]
-        })
+        processo.nodejs([
+          processo.escreva("teste")
+          processo.saia(0)
+        ])
         "console.log('teste');process.exit(0)"
       ])
     ]
